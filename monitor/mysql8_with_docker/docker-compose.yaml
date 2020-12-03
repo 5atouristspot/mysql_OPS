@@ -1,0 +1,57 @@
+version: '2'
+services:
+  exporter:
+    container_name: mysql-exporter-dev
+    image: prom/mysqld-exporter
+    environment:
+      # 这里指定的是要监控的 MySQL 数据库，这里我们以启动的 test-mysql 容器为示范。
+      # 实际应用当中，应该配置为具体的数据库实例。
+      - DATA_SOURCE_NAME=root:my-secret-pw@(192.168.74.95:3306)/
+    ports:
+      - "9104:9104"
+  exporter2:
+    container_name: mysql-exporter-dev2
+    image: prom/mysqld-exporter
+    environment:
+      # 这里指定的是要监控的 MySQL 数据库，这里我们以启动的 test-mysql 容器为示范。
+      # 实际应用当中，应该配置为具体的数据库实例。
+      - DATA_SOURCE_NAME=root:my-secret-pw@(192.168.74.95:3307)/
+    ports:
+      - "9105:9104"
+
+  prometheus:
+    container_name: prometheus
+    image: prom/prometheus
+    ports:
+      - "20001:9090"
+    # 映射普罗米修斯的配置文件，用于配置 Exporter，这里的文件应该在后面创建好，具体
+    # 路径以实际为准。
+    volumes:
+      - /data1/mycode/mysql8/monitor/prometheus.yml:/etc/prometheus/prometheus.yml
+
+  grafana:
+    container_name: grafana
+    image: grafana/grafana
+    environment:
+      # 配置 Grafana 的默认根 URL。
+      - GF_SERVER_ROOT_URL=http://192.168.74.95:20002
+      # 配置 Grafana 的默认 admin 密码。
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    ports:
+      - "20002:3000"
+    # 映射 Grafana 的数据文件，方便后面进行更改。
+    volumes:
+      - /data1/mycode/mysql8/monitor/Grafana:/var/lib/grafana
+
+  # 本服务只是用于演示，实际使用请注释掉本服务。
+  #mysql:
+  #  container_name: test-mysql
+  #  image: mysql
+  #  environment:
+  #    - MYSQL_ROOT_PASSWORD=root
+
+# 这里如果需要连接外部 MySQL 就需要处在同一个网络。
+networks:
+  default:
+    external:
+      name: mysql-monitor

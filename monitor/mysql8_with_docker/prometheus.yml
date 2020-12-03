@@ -1,0 +1,25 @@
+global:
+  scrape_interval:     15s
+  evaluation_interval: 15s
+
+alerting:
+  alertmanagers:
+  - static_configs:
+    - targets:
+      # - alertmanager:9093
+
+scrape_configs:
+  # Prometheus 监控配置
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['prometheus:9090']
+
+  # MySQL 监控配置
+  - job_name: 'mysql'
+    # 抓取间隔
+    scrape_interval: 5s
+    static_configs:
+      # 这里配置的是具体的 MySQL Exporter 的地址，在之前的 docker compose 文件
+      # 定义当中，mysql exporter 的容器名为 mysql-exporter-dev。
+      - targets: ['192.168.74.95:9104','192.168.74.95:9105']
+
