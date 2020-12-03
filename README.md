@@ -5,7 +5,7 @@
     - 1.2 mysql8_with_docker
         - 1.2.1 data 数据文件
         - 1.2.2 docker_images　镜像文件
-- 3.monitor
+- 3.monitor 监控
     - 3.1 galera-mysql5.7
     - 3.2 mysql8_with_docker
         - 3.2.1 docker_images 镜像文件
