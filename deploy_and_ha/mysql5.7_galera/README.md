@@ -15,7 +15,7 @@ optional arguments:
   --first        modify instance to first node of cluster
   --notfirst     modify instance to joiner node of cluster
   --donor DONOR  the node ip have in cluster, eg
-                 :10.20.4.138,10.20.4.139
+                 :10.10.4.111,10.20.4.112
   -P P           port of instance
   -d D           data directory of instance, eg: /data1
 ```

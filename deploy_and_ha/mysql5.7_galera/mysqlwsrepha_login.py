@@ -3,9 +3,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Created on 2018-03-29
-
-@author: zhihao
+@author: devin
 @used: login instances of mysql 5.7.20
 """
 import argparse
@@ -18,8 +16,8 @@ reload(sys)
 
 log = '/auto_op_stuff/galera_mysqlha/mysqlha.log'
 
-admin_user = 'tfadmin'
-admin_pwd = 'tfkj_secret'
+admin_user = 'xxxx'
+admin_pwd = 'yyyy'
 
 
 def write_log(log,log_content):

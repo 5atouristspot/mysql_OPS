@@ -3,9 +3,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Created on 2018-05-13
-
-@author: zhihao
+@author: devin
 @used: init service of mysql-wsrep 5.7.20
 """
 
