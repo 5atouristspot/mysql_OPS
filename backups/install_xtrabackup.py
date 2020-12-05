@@ -3,9 +3,8 @@
 # -*- coding: utf-8 -*-
 
 """
-Created on 2018-05-25
 
-@author: zhihao
+@author: devin
 @used: install percona-xtrabackup-24
 """
 

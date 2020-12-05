@@ -4,8 +4,7 @@
 # Effect : physics backup
 # OS environment: For Ubuntu 14.04 LTS Trusty and above
 #
-# author: zhihao
-# creat_time: 2018-5-25
+# author: devin
 # modify time:
 ############################################################
 
@@ -77,8 +76,8 @@ do
      shift
 done
 
-admin_user='tfadmin'
-admin_pwd='tfkj_secret'
+admin_user='xxxx'
+admin_pwd='yyyy'
 
 log='/auto_op_stuff/galera_mysqlha/physics_backup.log'
 

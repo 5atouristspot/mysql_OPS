@@ -3,9 +3,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Created on 2018-05-25
-
-@author: zhihao
+@author: devin
 @used: restore instances of mysql-wsrep-5.7.20
 """
 import argparse
@@ -17,8 +15,8 @@ reload(sys)
 
 log = '/auto_op_stuff/galera_mysqlha/mysqlwsrepha_restore_instance_{now_time}.log'.format(now_time=time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time())))
 
-admin_user = 'tfadmin'
-admin_pwd = 'tfkj_secret'
+admin_user = 'xxxx'
+admin_pwd = 'yyyy'
 
 def write_log(log,log_content):
     os.system('mkdir -p /auto_op_stuff/galera_mysqlha')
