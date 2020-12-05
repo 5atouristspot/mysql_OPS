@@ -6,7 +6,7 @@ services:
     environment:
       # 这里指定的是要监控的 MySQL 数据库，这里我们以启动的 test-mysql 容器为示范。
       # 实际应用当中，应该配置为具体的数据库实例。
-      - DATA_SOURCE_NAME=root:my-secret-pw@(192.168.74.95:3306)/
+      - DATA_SOURCE_NAME=root:my-secret-pw@(192.168.11.11:3306)/
     ports:
       - "9104:9104"
   exporter2:
@@ -15,7 +15,7 @@ services:
     environment:
       # 这里指定的是要监控的 MySQL 数据库，这里我们以启动的 test-mysql 容器为示范。
       # 实际应用当中，应该配置为具体的数据库实例。
-      - DATA_SOURCE_NAME=root:my-secret-pw@(192.168.74.95:3307)/
+      - DATA_SOURCE_NAME=root:my-secret-pw@(192.168.11.12:3307)/
     ports:
       - "9105:9104"
 
@@ -34,7 +34,7 @@ services:
     image: grafana/grafana
     environment:
       # 配置 Grafana 的默认根 URL。
-      - GF_SERVER_ROOT_URL=http://192.168.74.95:20002
+      - GF_SERVER_ROOT_URL=http://192.168.11.12:20002
       # 配置 Grafana 的默认 admin 密码。
       - GF_SECURITY_ADMIN_PASSWORD=admin
     ports:

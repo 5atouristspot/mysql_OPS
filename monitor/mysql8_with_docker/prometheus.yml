@@ -21,5 +21,5 @@ scrape_configs:
     static_configs:
       # 这里配置的是具体的 MySQL Exporter 的地址，在之前的 docker compose 文件
       # 定义当中，mysql exporter 的容器名为 mysql-exporter-dev。
-      - targets: ['192.168.74.95:9104','192.168.74.95:9105']
+      - targets: ['192.168.11.12:9104','192.168.11.12:9105']
 
