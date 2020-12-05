@@ -4,8 +4,7 @@
 # Effect : drop physics backup file
 # OS environment: For Ubuntu 14.04 LTS Trusty and above
 #
-# author: zhihao
-# creat_time: 2018-6-25
+# author: devin
 # modify time:
 ############################################################
 
